@@ -82,4 +82,5 @@ for entry in all:
         VALUES ( ?, ?, ?, ?, ? )''', 
         ( name, album_id, length, rating, count ) )
 
+    # use conn.commit() to confirm the changes made to the database
     conn.commit()
