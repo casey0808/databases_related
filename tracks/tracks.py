@@ -5,6 +5,8 @@ conn = sqlite3.connect('trackdb.sqlite')
 cur = conn.cursor()
 
 # Make some fresh tables using executescript()
+# cur.execute() can only execute a single SQL statement
+# use executescript() if you want to execute multiple SQL statements with one call
 cur.executescript('''
 DROP TABLE IF EXISTS Artist;
 DROP TABLE IF EXISTS Album;
@@ -40,7 +42,8 @@ if ( len(fname) < 1 ) : fname = 'Library.xml'
 def lookup(d, key):
     found = False
     for child in d:
-        if found : return child.text
+        if found : 
+            return child.text
         if child.tag == 'key' and child.text == key :
             found = True
     return None
@@ -49,7 +52,8 @@ stuff = ET.parse(fname)
 all = stuff.findall('dict/dict/dict')
 print('Dict count:', len(all))
 for entry in all:
-    if ( lookup(entry, 'Track ID') is None ) : continue
+    if ( lookup(entry, 'Track ID') is None ) : 
+        continue
 
     name = lookup(entry, 'Name')
     artist = lookup(entry, 'Artist')
