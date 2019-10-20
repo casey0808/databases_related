@@ -1,3 +1,6 @@
+// npm install mysql
+// npm install faker
+
 var mysql = require('mysql');
 var faker = require('faker');
 
