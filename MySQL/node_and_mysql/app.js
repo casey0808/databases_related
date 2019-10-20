@@ -49,19 +49,4 @@ connection.query(q, [data], function(error, results){
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 connection.end();
