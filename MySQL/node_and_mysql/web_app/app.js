@@ -1,3 +1,10 @@
+// npm init
+// npm install --save express
+// npm install --save body-parser
+// npm install mysql
+// mysql-ctl start
+
+
 var express = require('express');
 var app = express();
 var mysql = require('mysql');
