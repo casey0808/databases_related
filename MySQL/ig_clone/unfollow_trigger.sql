@@ -1,6 +1,6 @@
 DELIMITER $$
 
-CREATE TRIGGER create_unfollow
+CREATE TRIGGER capture_unfollow
     AFTER DELETE ON follows FOR EACH ROW 
 BEGIN
     INSERT INTO unfollows
